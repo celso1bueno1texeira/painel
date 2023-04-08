@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  namespace: default
+  name: app-tools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-tools
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 10%
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: app-tools
+        role: master
+        tier: app
+    spec:
+      containers:
+      - name: app-tools
+        image: celsinhobueno/painel:app-tools
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            cpu: 5m
+            memory: 85Mi
+        

@@ -24,8 +24,11 @@ pipeline{
         
         stage('Deploy Kubernetes'){
             steps{
+                withKubeconfig([credentialsId: 'kebeconfig']){
+                    sh 'kubectl apply -f ./k8s/deployment.yaml'
+                }
                 script{
-                    'sh echo "saldações"'
+                    sh 'echo "saldações"'
                 }
             }
         }

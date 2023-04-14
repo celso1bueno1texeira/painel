@@ -18,6 +18,3 @@ spec:
           requests:
             cpu: 5m
             memory: 85Mi
-  contexts:
-    - context:
-      name: do-nyc3-k8s-1-26-3-do-0-nyc3-1681435794472

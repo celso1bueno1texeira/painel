@@ -26,6 +26,13 @@ pipeline{
                 }      
             }
         }
+        stage('Deploy Kubernetes'){
+            steps{
+                step{
+                    'sh echo "saldações"'
+                }
+            }
+        }
     }
     
 }

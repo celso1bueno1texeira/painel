@@ -15,8 +15,8 @@ DEPLOYMENT=painel-tools
 
 if [ ! -z "$(kubectl get service --namespace=$NAMESPACE | grep $DEPLOYMENT)" ]
 then
-    sh 'echo = "o service já existe!!!"'
-    sh 'exit'
+    echo = "o service já existe!!!"
+    exit
 else
     kubectl apply -f ./k8s/api/service.yaml
 fi

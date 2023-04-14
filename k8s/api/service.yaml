@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: dafault
+  namespace: default
   name: painel-tools  
 spec:
   type: NodePort

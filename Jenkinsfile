@@ -12,7 +12,7 @@ pipeline{
         }
 
         stage('Push Docker image'){
-            step{
+            steps {
                 script{
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){
                         dockerapp.push('latest')
@@ -24,7 +24,7 @@ pipeline{
         
         stage('Deploy Kubernetes'){
             steps{
-                step{
+                script{
                     'sh echo "saldações"'
                 }
             }

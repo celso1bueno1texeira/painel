@@ -24,7 +24,8 @@ pipeline{
         stage('Deploy Service'){
             steps{
                 withKubeConfig([credentialsId: 'kubeconfig']){
-                    if(service.painel-tools == 'true'){
+                    if [service.painel-tools === 'true'];
+                    then
                         sh 'kubectl apply -f ./k8s/api/service.yaml'
                     }                        
                 }

@@ -4,7 +4,7 @@ metadata:
   namespace: default
   name: app-tools
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: app-tools
@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: app-tools
-        image: celsinhobueno/painel:app-tools
+        image: celsinhobueno/painel:latest
         ports:
         - containerPort: 3000
         resources:

@@ -22,7 +22,7 @@ pipeline{
         stage('Deploy Service'){
             steps{
                 withKubeConfig([credentialsId: 'kubeconfig']){
-                        sh 'kubectl apply -f ./k8s/api/service.yaml'
+                        sh ("./01-service/create_service.sh")
                 }                        
             }
         }    

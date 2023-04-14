@@ -8,17 +8,17 @@ spec:
   selector:
     matchLabels:
       app: app-tools
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 10%
-      maxUnavailable: 0
-  template:
-    metadata:
-      labels:
-        app: app-tools
-        role: master
-        tier: app
+  # strategy:
+  #   type: RollingUpdate
+  #   rollingUpdate:
+  #     maxSurge: 10%
+  #     maxUnavailable: 0
+  # template:
+  #   metadata:
+  #     labels:
+  #       app: app-tools
+  #       role: main
+  #       tier: app
     spec:
       containers:
       - name: app-tools
@@ -28,5 +28,4 @@ spec:
         resources:
           requests:
             cpu: 5m
-            memory: 85Mi
-        
+            memory: 85Mi        

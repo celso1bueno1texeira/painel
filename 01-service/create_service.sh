@@ -13,7 +13,7 @@
 NAMESPACE=default
 DEPLOYMENT=painel-tools
 
-if [ -z "$(kubectl get service --namespace=$NAMESPACE | grep $DEPLOYMENT)" ]
+if [ ! -z "$(kubectl get service --namespace=$NAMESPACE | grep $DEPLOYMENT)" ]
 then
     sh 'echo = "o service já existe!!!"'
 else

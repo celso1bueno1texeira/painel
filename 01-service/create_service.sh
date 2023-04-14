@@ -18,5 +18,5 @@ if [ ! -z "$(kubectl get service --namespace=$NAMESPACE | grep $SECRET)" ]
 then
     sh 'echo = "o service já existe!!!"'
 else
-    sh 'kubectl apply -f ./k8s/api/service.yaml'
+    kubectl apply -f ./k8s/api/service.yaml
 fi

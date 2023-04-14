@@ -2,7 +2,6 @@ pipeline{
     agent any
 
     stages{
-
         stage('Build Docker image'){
             steps{
                 script{
@@ -10,7 +9,6 @@ pipeline{
                 }
             }
         }
-
         stage('Push Docker image'){
             steps {
                 script{
@@ -25,11 +23,9 @@ pipeline{
             steps{
                 withKubeConfig([credentialsId: 'kubeconfig']){
                         sh 'kubectl apply -f ./k8s/api/service.yaml'
-                    }                        
-                }
+                }                        
             }
-        }
-        
+        }    
         stage('Deploy Kubernetes'){
             environment{
                 tag_version = "${env.BUILD_ID}"
@@ -42,5 +38,5 @@ pipeline{
             }
         }
     }
-    
 }
+    

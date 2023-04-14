@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: painel-tools
   annotations:
     kubernetes.digitalocean.com/load-balancer-id: "a4f9a238d47744727853db5ee466f342"
     service.beta.kubernetes.io/do-loadbalancer-size-unit: "3"

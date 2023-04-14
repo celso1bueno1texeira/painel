@@ -12,7 +12,7 @@
 
 NAMESPACE=default
 DEPLOYMENT=painel-tools
-SECRET=$DEPLOYMENT
+SECRET=$DEPLOYMENT-service
 
 if [ ! -z "$(kubectl get service --namespace=$NAMESPACE | grep $SECRET)" ]
 then

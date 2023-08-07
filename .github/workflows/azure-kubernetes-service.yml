@@ -99,7 +99,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: 
-            celsinhobueno/softdesign:${{ github,run.number }}
+            celsinhobueno/softdesign:${{ github.run.number }}
             celsinhobueno/softdesign:latest
               
         # Use kubelogin to configure your kubeconfig for Azure auth
